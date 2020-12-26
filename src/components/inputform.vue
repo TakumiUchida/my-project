@@ -13,7 +13,7 @@
                         <input type="radio" name="gender" v-model="$store.state.value" value="女性">女性
                     </div>
                 </div>
-                <div class="birthdy">
+                <div class="birthday">
                     <div class="has-text-info is-size-7">-生年月日-</div>
                     <form id="selectDate" class="mg-15">
                         <select v-model="$store.state.year">
