@@ -1,7 +1,7 @@
 <template>
     <div class="step1__container">
         <div class="input-form">
-            <div class="step1 has-background-info has-text-white is-pulled-left is-size-7">step1</div>
+            <div class="has-background-info has-text-white is-pulled-left is-size-7">step1</div>
             <div class="top">
                 お客様の情報を入力してください
             </div>

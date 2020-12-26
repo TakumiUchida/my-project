@@ -1,7 +1,7 @@
 <template>
     <div class="step2__container">
         <div class="input-form">
-            <div class="step1 has-background-info has-text-white is-pulled-left is-size-7">step2</div>
+            <div class="has-background-info has-text-white is-pulled-left is-size-7">step2</div>
             <div class="top">
                 以下にお答えください
             </div>
@@ -33,7 +33,6 @@
         <router-link to="/step3" class="is-primary button">次へ進む</router-link>
     </div>
 </template>
-
 <script>
     export default {
         data() {

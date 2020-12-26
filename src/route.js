@@ -5,8 +5,6 @@ import step2 from './components/step2'
 import step3 from './components/step3'
 import step4 from './components/step4'
 
-
-
 Vue.use(VueRouter)
 
 const routes = [
