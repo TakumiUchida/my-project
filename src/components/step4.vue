@@ -21,19 +21,19 @@
                 <div class="seimeihoken">
                     <div class="has-text-info is-size-7">-現在生命保険に加入されていますか？-</div>
                      <div class="mg-15">
-                        {{ $store.state.year }}
+                        {{ $store.state.seimeihoken }}
                     </div>
                 </div>
                 <div class="nyuuinn">
                     <div class="has-text-info is-size-7">-現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？-</div>
                      <div class="mg-15">
-                        {{ $store.state.year }}
+                        {{ $store.state.nyuuinn }}
                     </div>
                 </div>
                 <div class="nyuuinn2">
                     <div class="has-text-info is-size-7">-過去5年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の入院をしたことがありますか？-</div>
                      <div class="mg-15">
-                        {{ $store.state.year }}
+                        {{ $store.state.nyuuinn2 }}
                     </div>
                 </div>
                 <div class="soudann">
