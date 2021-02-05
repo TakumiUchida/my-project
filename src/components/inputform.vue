@@ -9,26 +9,26 @@
                 <div class="gender">
                     <div class="has-text-info is-size-7">-性別-</div>
                     <div class="radio mg-15">
-                        <input type="radio" name="gender" v-model="$store.state.value" value="男性">男性
-                        <input type="radio" name="gender" v-model="$store.state.value" value="女性">女性
+                        <input type="radio" name="gender" v-model="gender" value="男性">男性
+                        <input type="radio" name="gender" v-model="gender" value="女性">女性
                     </div>
                 </div>
                 <div class="birthday">
                     <div class="has-text-info is-size-7">-生年月日-</div>
                     <form id="selectDate" class="mg-15">
-                        <select v-model="$store.state.year">
+                        <select v-model="year">
                             <option v-for="era in eras" :key="era.year" :value="era.year">
                                 {{ era.label }}
                             </option>
                         </select>年
-                        <select v-model="$store.state.month">
-                            <option v-for="n in 12" :key="n" :value="n">
-                                {{ n }}
+                        <select v-model="month">
+                            <option v-for="month in months" :key="month" :value="month">
+                                {{ month }}
                             </option>
                         </select>月
-                        <select v-model="$store.state.day">
-                            <option v-for="n in 31" :key="n" :value="n">
-                                {{ n }}
+                        <select v-model="day">
+                            <option v-for="day in days" :key="day" :value="day">
+                                {{ day }}
                             </option>
                         </select>日
                     </form>
@@ -40,31 +40,53 @@
 </template>
 
 <script>
+    import { generate, month, day } from '@/static/js/definition';
     export default {
         data() {
             return {
-                eras:[]
+                eras: [],
+                months: [],
+                days: []
+            }
+        },
+        computed: {
+            gender: {
+                get() {
+                    return this.$store.state.value
+                },
+                set(value) {
+                    this.$store.commit('mutateVal', value)
+                }
+            },
+            year: {
+                get() {
+                    return this.$store.state.year
+                },
+                set(value) {
+                    this.$store.commit('mutateYear', value)
+                }
+            },
+            month: {
+                get() {
+                    return this.$store.state.month
+                },
+                set(value) {
+                    this.$store.commit('mutateMonth', value)
+                }
+            },
+            day: {
+                get() {
+                    return this.$store.state.day
+                },
+                set(value) {
+                    this.$store.commit('mutateDay', value)
+                }
             }
         },
         mounted() {
-        this.eras = this.generate();
-        },
-        methods: {
-            generate() {
-                const eras = [];
-                for (let i = 2020; i > 1920; i--) {
-                    if(i > 2018) {
-                        eras.push( {"year": i, "label": `${i} (令和${i-2018}年)`} );
-                    } else if (i > 1988) {
-                        eras.push( {"year": i, "label": `${i} (平成${i-1988}年)`} );
-                    } else if (i > 1925) {
-                        eras.push( {"year": i, "label": `${i} (昭和${i-1925}年)`} );
-                    } else if (i > 1911) {
-                        eras.push( {"year": i, "label": `${i} (大正${i-1911}年)`} );
-                    } 
-                }
-            return eras;
-            }
+            this.eras = generate();
+            this.days = day();
+            this.months = month();
         }
     }
 </script>

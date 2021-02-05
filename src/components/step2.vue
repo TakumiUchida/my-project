@@ -6,25 +6,25 @@
                 以下にお答えください
             </div>
             <div class="p-10 has-text-left">
-                <div class="seimeihoken">
+                <div class="insurance">
                     <div class="has-text-info is-size-7">-現在生命保険に加入されていますか？-</div>
                     <div class="radio mg-15">
-                        <input type="radio" name="reply" id="yes" v-on:click="onclickOfFirst" v-model="$store.state.seimeihoken" value="はい">はい
-                        <input type="radio" name="reply" id="no" v-on:click="onclickOfFirst" v-model="$store.state.seimeihoken" value="いいえ">いいえ
+                        <input type="radio" name="reply" id="yes" v-on:click="onclickOfFirst" v-model="insurance" value="はい">はい
+                        <input type="radio" name="reply" id="no" v-on:click="onclickOfFirst" v-model="insurance" value="いいえ">いいえ
                     </div>
                 </div>
-                <div v-show="showOfFirst" class="nyuuinn">
+                <div v-show="showOfFirst" class="hospitalization">
                     <div class="has-text-info is-size-7">-現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？-</div>
                     <div class="radio mg-15">
-                        <input type="radio" name="reply2" id="yes" v-on:click="onclickOfSecond" v-model="$store.state.nyuuinn" value="はい">はい
-                        <input type="radio" name="reply2" id="no" v-on:click="onclickOfSecond" v-model="$store.state.nyuuinn" value="いいえ">いいえ
+                        <input type="radio" name="reply2" id="yes" v-on:click="onclickOfSecond" v-model="hospitalization" value="はい">はい
+                        <input type="radio" name="reply2" id="no" v-on:click="onclickOfSecond" v-model="hospitalization" value="いいえ">いいえ
                     </div>
                 </div>
-                <div v-show="showOfSecond" class="nyuuinn2">
+                <div v-show="showOfSecond" class="hospitalization2">
                     <div class="has-text-info is-size-7">-過去5年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の入院をしたことがありますか？-</div>
                     <div class="radio mg-15">
-                        <input type="radio" name="reply3" id="no" v-model="$store.state.nyuuinn2" value="はい">はい
-                        <input type="radio" name="reply3" id="no" v-model="$store.state.nyuuinn2" value="いいえ">いいえ
+                        <input type="radio" name="reply3" id="no" v-model="hospitalization2" value="はい">はい
+                        <input type="radio" name="reply3" id="no" v-model="hospitalization2" value="いいえ">いいえ
                     </div>
                 </div>
             </div>
@@ -39,6 +39,32 @@
             return {
                 showOfFirst: false,
                 showOfSecond: false
+            }
+        },
+        computed: {
+            insurance: {
+                get() {
+                    return this.$store.state.insurance
+                },
+                set(value) {
+                    this.$store.commit('mutateInsurance', value)
+                }
+            },
+            hospitalization: {
+                get() {
+                    return this.$store.state.hospitalization
+                },
+                set(value) {
+                    this.$store.commit('mutateHospitalization', value)
+                }
+            },
+            hospitalization2: {
+                get() {
+                    return this.$store.state.hospitalization2
+                },
+                set(value) {
+                    this.$store.commit('mutateHospitalization2', value)
+                }
             }
         },
         methods: {
