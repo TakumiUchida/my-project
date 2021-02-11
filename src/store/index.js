@@ -39,5 +39,15 @@ export default new Vuex.Store({
     mutateTextarea(state, payload) {
       state.textarea = payload;
     }
+  },
+  getters: {
+    getVal: (state) => state.gender,
+    getInsurance: (state) => state.insurance,
+    getHospitalization: (state) => state.hospitalization,
+    getHospitalization2: (state) => state.hospitalization2,
+    getYear: (state) => state.year,
+    getMonth: (state) => state.month,
+    getDay: (state) => state.day,
+    getTextarea: (state) => state.textarea,
   }
 });

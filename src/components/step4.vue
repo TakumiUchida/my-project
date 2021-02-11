@@ -53,7 +53,7 @@
         computed: {
             gender: {
                 get() {
-                    return this.$store.state.gender
+                    return this.$store.getters.getVal
                 },
                 set(value) {
                     this.$store.commit('mutateVal', value)
@@ -61,7 +61,7 @@
             },
             year: {
                 get() {
-                    return this.$store.state.Year
+                    return this.$store.getters.getYear
                 },
                 set(value) {
                     this.$store.commit('mutateYear', value)
@@ -69,7 +69,7 @@
             },
             month: {
                 get() {
-                    return this.$store.state.month
+                    return this.$store.getters.getMonth
                 },
                 set(value) {
                     this.$store.commit('mutateMonth', value)
@@ -77,7 +77,7 @@
             },
             day: {
                 get() {
-                    return this.$store.state.day
+                    return this.$store.getters.getDay
                 },
                 set(value) {
                     this.$store.commit('mutateDay', value)
@@ -85,7 +85,7 @@
             },
             insurance: {
                 get() {
-                    return this.$store.state.insurance
+                    return this.$store.getters.getInsurance
                 },
                 set(value) {
                     this.$store.commit('mutateInsurance', value)
@@ -93,7 +93,7 @@
             },
             hospitalization: {
                 get() {
-                    return this.$store.state.hospitalization
+                    return this.$store.getters.getHospitalization
                 },
                 set(value) {
                     this.$store.commit('mutateHospitalization', value)
@@ -101,7 +101,7 @@
             },
             hospitalization2: {
                 get() {
-                    return this.$store.state.hospitalization2
+                    return this.$store.getters.getHospitalization2
                 },
                 set(value) {
                     this.$store.commit('mutateHospitalization2', value)
@@ -109,7 +109,7 @@
             },
             textarea: {
                 get() {
-                    return this.$store.state.textarea
+                    return this.$store.getters.getTextarea
                 },
                 set(value) {
                     this.$store.commit('mutateTextarea', value)

@@ -21,7 +21,7 @@
         computed: {
             textarea: {
                 get() {
-                    return this.$store.state.textarea
+                    return this.$store.getters.getTextarea
                 },
                 set(value) {
                     this.$store.commit('mutateTextarea', value)

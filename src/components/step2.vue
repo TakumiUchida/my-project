@@ -44,7 +44,7 @@
         computed: {
             insurance: {
                 get() {
-                    return this.$store.state.insurance
+                    return this.$store.getters.getInsurance
                 },
                 set(value) {
                     this.$store.commit('mutateInsurance', value)
@@ -52,7 +52,7 @@
             },
             hospitalization: {
                 get() {
-                    return this.$store.state.hospitalization
+                    return this.$store.getters.getHospitalization
                 },
                 set(value) {
                     this.$store.commit('mutateHospitalization', value)
@@ -60,7 +60,7 @@
             },
             hospitalization2: {
                 get() {
-                    return this.$store.state.hospitalization2
+                    return this.$store.getters.getHospitalization2
                 },
                 set(value) {
                     this.$store.commit('mutateHospitalization2', value)

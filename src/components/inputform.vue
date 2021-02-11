@@ -52,7 +52,7 @@
         computed: {
             gender: {
                 get() {
-                    return this.$store.state.value
+                    return this.$store.getters.getVal
                 },
                 set(value) {
                     this.$store.commit('mutateVal', value)
@@ -60,7 +60,7 @@
             },
             year: {
                 get() {
-                    return this.$store.state.year
+                    return this.$store.getters.getYear
                 },
                 set(value) {
                     this.$store.commit('mutateYear', value)
@@ -68,7 +68,7 @@
             },
             month: {
                 get() {
-                    return this.$store.state.month
+                    return this.$store.getters.getMonth
                 },
                 set(value) {
                     this.$store.commit('mutateMonth', value)
@@ -76,7 +76,7 @@
             },
             day: {
                 get() {
-                    return this.$store.state.day
+                    return this.$store.getters.getDay
                 },
                 set(value) {
                     this.$store.commit('mutateDay', value)
