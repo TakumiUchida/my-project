@@ -4,6 +4,7 @@ import inputform from './components/inputform.vue'
 import step2 from './components/step2'
 import step3 from './components/step3'
 import step4 from './components/step4'
+import todolist from './components/todolist/todolist'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
         path: '/step4', 
         component: step4, 
         name: 'step4',  
+    },
+    {
+        path: '/todolist/todolist', 
+        component: todolist, 
+        name: 'todolist',  
     }
 ]
 
