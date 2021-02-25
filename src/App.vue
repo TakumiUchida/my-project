@@ -4,7 +4,7 @@
     <h1>vue課題</h1>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <router-link to="/inputform">vue課題②へ</router-link>
-    <pre>{{ $store.state }}</pre>
+    <router-link to="/todolist/todolist">vue課題③へ</router-link>
     <hr>
     <transition name="component-fade" mode="out-in">
       <router-view />
