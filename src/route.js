@@ -5,6 +5,8 @@ import step2 from './components/step2'
 import step3 from './components/step3'
 import step4 from './components/step4'
 import todolist from './components/todolist/todolist'
+import userregistration from './components/money/userregistration'
+import dashboard from './components/money/dashboard'
 
 Vue.use(VueRouter)
 
@@ -33,6 +35,16 @@ const routes = [
         path: '/todolist/todolist', 
         component: todolist, 
         name: 'todolist',  
+    },
+    {
+        path: '/userregistration', 
+        component: userregistration, 
+        name: 'userregistration',  
+    },
+    {
+        path: '/dashboard', 
+        component: dashboard, 
+        name: 'dashboard',  
     }
 ]
 

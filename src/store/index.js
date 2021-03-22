@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    // vue課題②のデータ
     gender: '',   
     insurance: '',
     hospitalization: '',
@@ -12,9 +13,12 @@ export default new Vuex.Store({
     year: 2020,
     month: 1,
     day: 1,
-    textarea: ''
+    textarea: '',
+    // vue課題④のデータ
+    username: ''
   },
   mutations: {
+    // vue課題②
     mutateVal(state, payload) {
       state.gender = payload;
     },
@@ -38,9 +42,14 @@ export default new Vuex.Store({
     },
     mutateTextarea(state, payload) {
       state.textarea = payload;
+    },
+    // vue課題④
+    onAuthStateChanged(state, username) {
+      state.username = username;
     }
   },
   getters: {
+    // vue課題②
     getVal: (state) => state.gender,
     getInsurance: (state) => state.insurance,
     getHospitalization: (state) => state.hospitalization,
@@ -49,5 +58,7 @@ export default new Vuex.Store({
     getMonth: (state) => state.month,
     getDay: (state) => state.day,
     getTextarea: (state) => state.textarea,
+    // vue課題④
+    username: (state) => state.username
   }
 });
