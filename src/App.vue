@@ -6,7 +6,6 @@
     <router-link to="/inputform">vue課題②へ</router-link>
     <router-link to="/todolist/todolist">vue課題③へ</router-link>
     <router-link to="/userregistration">vue課題④へ</router-link>
-    <span>{{ this.$store.state }}</span>
     <hr>
     <transition name="component-fade" mode="out-in">
       <router-view />

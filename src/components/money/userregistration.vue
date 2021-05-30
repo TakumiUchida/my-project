@@ -1,7 +1,6 @@
 <template>
     <div>
         <div id="title">
-        <span>{{ $data }}</span>
             <p class="is-size-3 has-text-centered">新規登録画面</p>
         </div>
         <table>
