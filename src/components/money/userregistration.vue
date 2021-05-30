@@ -1,6 +1,7 @@
 <template>
     <div>
         <div id="title">
+        <span>{{ $data }}</span>
             <p class="is-size-3 has-text-centered">新規登録画面</p>
         </div>
         <table>
@@ -14,12 +15,12 @@
             </tr>
             <tr>
                 <td class="has-text-centered">パスワード</td>
-                <td><input type="text" v-model="passsword"></td>
+                <td><input type="text" v-model="password"></td>
             </tr>
         </table>
         <div>
             <div>
-                <button @click="signUp" class="button is-info is-outlined trans">新規登録</button>
+                <button v-on:click="signUp" class="button is-info is-outlined trans">新規登録</button>
             </div>
             <div>
                 <router-link to="money/login">ログインはこちらから</router-link>
@@ -37,33 +38,17 @@
     }
 </style>
 <script>
-import firebase from 'firebase'
     export default {
         data() {
             return {
+                username: '',
                 email: '',
-                passsword: ''
-            }
-        },
-        computed: {
-            username: {
-                get() {
-                    return this.$store.getters.username
-                },
-                set(value) {
-                    this.$store.commit('onAuthStateChanged', value)
-                }
-            }
+                password: ''
+            };
         },
         methods: {
             signUp() {
-               firebase.auth().createUserWithEmailAndPassword(this.email, this.passsword)
-               .then(
-                    this.$router.push('/dashboard')
-               ) 
-               .catch((error) => {
-                    alert(error.message)
-               });
+                this.$store.dispatch('registerUser', {username: this.username, email: this.email, password: this.password});
             }
         }
     }

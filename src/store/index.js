@@ -13,9 +13,7 @@ export default new Vuex.Store({
     year: 2020,
     month: 1,
     day: 1,
-    textarea: '',
-    // vue課題④のデータ
-    username: ''
+    textarea: ''
   },
   mutations: {
     // vue課題②
@@ -42,10 +40,6 @@ export default new Vuex.Store({
     },
     mutateTextarea(state, payload) {
       state.textarea = payload;
-    },
-    // vue課題④
-    onAuthStateChanged(state, username) {
-      state.username = username;
     }
   },
   getters: {
@@ -57,8 +51,6 @@ export default new Vuex.Store({
     getYear: (state) => state.year,
     getMonth: (state) => state.month,
     getDay: (state) => state.day,
-    getTextarea: (state) => state.textarea,
-    // vue課題④
-    username: (state) => state.username
+    getTextarea: (state) => state.textarea
   }
 });

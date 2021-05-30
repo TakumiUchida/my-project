@@ -11,7 +11,7 @@
                     return this.$store.getters.username
                 },
                 set(value) {
-                    this.$store.commit('onAuthStateChanged', value)
+                    this.$store.commit('setUserName', value)
                 }
             }
         } 
