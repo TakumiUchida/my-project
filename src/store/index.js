@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    // vue課題②のデータ
     gender: '',   
     insurance: '',
     hospitalization: '',
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     textarea: ''
   },
   mutations: {
+    // vue課題②
     mutateVal(state, payload) {
       state.gender = payload;
     },
@@ -41,6 +43,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    // vue課題②
     getVal: (state) => state.gender,
     getInsurance: (state) => state.insurance,
     getHospitalization: (state) => state.hospitalization,
@@ -48,6 +51,6 @@ export default new Vuex.Store({
     getYear: (state) => state.year,
     getMonth: (state) => state.month,
     getDay: (state) => state.day,
-    getTextarea: (state) => state.textarea,
+    getTextarea: (state) => state.textarea
   }
 });
