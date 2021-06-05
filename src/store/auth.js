@@ -34,6 +34,17 @@ export default new Vuex.Store({
       .catch((error) => {
         alert(error.message)
       });
+    },
+    logIn({ commit }, userInfo) {
+      firebase.auth().signInWithEmailAndPassword(userInfo.email, userInfo.password)
+      .then(() => {
+        commit('setEmail', userInfo.email);
+        commit('setPassword', userInfo.password);
+        router.push('/dashboard')
+      })
+      .catch((error) => {
+        alert(error.message);
+      });    
     }
   },
   getters: {
